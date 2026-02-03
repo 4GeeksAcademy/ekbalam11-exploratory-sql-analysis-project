@@ -1,39 +1,34 @@
--- PLEASE READ THIS BEFORE RUNNING THE EXERCISE
 
--- ⚠️ IMPORTANT: This SQL file may crash due to two common issues: comments and missing semicolons.
-
--- ✅ Suggestions:
--- 1) Always end each SQL query with a semicolon `;`
--- 2) Ensure comments are well-formed:
---    - Use `--` for single-line comments only
---    - Avoid inline comments after queries
---    - Do not use `/* */` multi-line comments, as they may break execution
-
--- -----------------------------------------------
--- queries.sql
--- Complete each mission by writing your SQL query
--- directly below the corresponding instruction
--- -----------------------------------------------
-
-SELECT * FROM regions;
-SELECT * FROM species;
-SELECT * FROM climate;
-SELECT * FROM observations;
+-- SELECT * FROM regions;
+-- SELECT * FROM species;
+-- SELECT * FROM climate;
+-- SELECT * FROM observations;
 
 
 -- MISSION 1
--- Your query here;
+-- ¿Cuáles son las primeras 10 observaciones registradas?
+-- Utiliza LIMIT para mostrar solo una parte de la tabla;
+-- SELECT * FROM observations 
+-- LIMIT 10
+
+
 
 -- MISSION 2
--- Your query here;
+-- ¿Qué identificadores de región (region_id) aparecen en los datos?
+-- Usa SELECT DISTINCT para evitar repeticiones;
+-- SELECT DISTINCT region_id as region FROM observations;
 
 
 -- MISSION 3
--- Your query here;
+-- ¿Cuántas especies distintas (species_id) se han observado?
+-- Combina COUNT con DISTINCT para no contar duplicados;
+-- SELECT COUNT(DISTINCT species_id) FROM observations;
 
 
 -- MISSION 4
 -- Your query here;
+-- ¿Cuántas observaciones hay para la región con region_id = 2?
+-- Aplica una condición con WHERE.
 
 
 -- MISSION 5
