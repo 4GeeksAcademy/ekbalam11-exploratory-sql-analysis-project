@@ -28,12 +28,16 @@
 -- MISSION 4
 -- Your query here;
 -- ¿Cuántas observaciones hay para la región con region_id = 2?
--- Aplica una condición con WHERE.
-
+-- Aplica una condición con WHERE;
+-- SELECT COUNT(region_id) FROM observations
+-- WHERE region_id = 2;
 
 -- MISSION 5
--- Your query here;
-
+-- ¿Cuántas observaciones se registraron el día 1998-08-08?
+-- Filtra por fecha exacta usando igualdad;
+SELECT COUNT(*) as observations_per_day
+FROM observations
+WHERE observation_date = '1998-08-08';
 
 -- MISSION 6
 -- Your query here;
