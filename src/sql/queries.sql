@@ -8,7 +8,7 @@
 -- MISSION 1
 -- ¿Cuáles son las primeras 10 observaciones registradas?
 -- Utiliza LIMIT para mostrar solo una parte de la tabla;
--- SELECT * FROM observations 
+-- SELECT * FROM observations;
 -- LIMIT 10
 
 
@@ -35,17 +35,47 @@
 -- MISSION 5
 -- ¿Cuántas observaciones se registraron el día 1998-08-08?
 -- Filtra por fecha exacta usando igualdad;
-SELECT COUNT(*) as observations_per_day
-FROM observations
-WHERE observation_date = '1998-08-08';
+-- SELECT COUNT(*) as observations_per_day
+-- FROM observations
+-- WHERE observation_date = '1998-08-08';
 
 -- MISSION 6
 -- Your query here;
+-- ¿Cuál es el region_id con más observaciones?
+-- Agrupa por región y cuenta cuántas veces aparece cada una;
+SELECT region_id, COUNT(*) as total_observations
+FROM observations
+GROUP BY region_id
+ORDER BY total_observations DESC
+LIMIT 1;
 
 
 -- MISSION 7
 -- Your query here;
+-- ¿Cuáles son los 5 species_id más frecuentes?
+-- Agrupa, ordena por cantidad descendente y limita el resultado;
+SELECT species_id, COUNT(*) as total_species
+FROM observations
+GROUP BY species_id
+ORDER BY total_species DESC
+LIMIT 10;
 
 
 -- MISSION 8
 -- Your query here;
+-- ¿Qué especies (species_id) tienen menos de 5 registros?
+-- Agrupa por especie y usa HAVING para aplicar una condició;
+SELECT species_id, COUNT(*) as total_species
+FROM observations
+GROUP BY species_id
+HAVING COUNT(*) < 5
+ORDER BY total_species DESC;
+
+-- MISSION 9
+-- Your query here;
+-- ¿Qué observadores (observer) registraron más observaciones?
+-- Agrupa por el nombre del observador y cuenta los registros;
+SELECT observer, COUNT(*) as total_observations
+FROM observations
+GROUP BY observer
+ORDER BY total_observations DESC;
